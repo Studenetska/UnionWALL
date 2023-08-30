@@ -1,0 +1,285 @@
+@use "variables" as *;
+@use "mixin" as *;
+@use "icons";
+
+.footer {
+  &__body {
+    border-top: 1px solid #d8d8d8;
+    display: grid;
+    grid-template-columns: 250px 1fr 290px;
+
+    @include adaptiv-value("padding-top", 15, 5, 1);
+    @include adaptiv-value("padding-bottom", 60, 30, 1);
+    @include adaptiv-value("column-gap", 80, 0, 1);
+
+    @media (max-width: #{$md1}px) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 290px;
+    }
+    @media (max-width: #{$md2}px) {
+      display: block;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: #{$md1}px) {
+      grid-column: span 2;
+      @include adaptiv-value("margin-bottom", 40, 30, 1);
+    }
+  }
+
+  &__logo {
+    margin: 0 0 calc(16px / 24px * 1em) 0px;
+  }
+
+  &__text {
+    color: $grayColor;
+    line-height: 150%;
+    &:not(:last-child) {
+      margin: 0 0 1em 0;
+    }
+  }
+
+  &__contacts {
+  }
+
+  &__menu {
+    @media (max-width: #{$md2}px) {
+      @include adaptiv-value("margin-bottom", 40, 30, 1);
+    }
+  }
+
+  &__subscribe {
+    @media (max-width: #{$md3}px) {
+      margin-left: 7px;
+    }
+    @media (max-width: #{$md4}px) {
+      margin-top: -5px;
+    }
+  }
+
+  &__line {
+    @include adaptiv-value("padding-top", 95, 60, 1);
+
+    height: 2px;
+    width: 2px;
+    color: #000;
+    margin: 0 auto;
+  }
+}
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    color: $grayColor;
+    line-height: 150%;
+    transition: color 0.3s ease 0s;
+    &::before {
+      margin: 0 8px 0 0;
+    }
+    &:not(:last-child) {
+      @include adaptiv-value("margin-bottom", 16, 10, 1);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangeColor;
+      }
+    }
+  }
+}
+
+.menu-footer {
+  @media (min-width: #{$md3}px) {
+    display: flex;
+  }
+  &__column {
+    @media (min-width: #{$md3}px) {
+      flex: 0 1 33.333%;
+    }
+    @media (max-width: #{$md3}px) {
+      margin-bottom: 32px;
+    }
+    @media (max-width: #{$md4}px) {
+      margin-bottom: 15px;
+    }
+  }
+  &__title {
+    @include font("Gilroy", "Gilroy-Bold", "700", "normal");
+
+    text-align: start;
+    cursor: default;
+
+    @media (min-width: #{$md3}px) {
+      margin: 0 -12px calc((16px / 24px) * 1em) 0;
+    }
+
+    @media (max-width: #{$md3}px) {
+      cursor: pointer;
+      transition: 0.4s;
+    }
+    ._init & {
+      display: flex;
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+
+      @extend ._icon-arrow-down;
+      &::before {
+        @extend %ic;
+        font-size: 12px;
+        transition: transform 0.3s ease 0s;
+      }
+    }
+    &.active::before {
+      transform: rotate(-180deg);
+    }
+  }
+  &__list {
+    margin-left: -31px;
+    li {
+      &:not(:last-child) {
+        margin: 0 0 15px 0;
+      }
+    }
+    @media (max-width: #{$md3}px) {
+      max-height: 0px;
+      padding: 0;
+      margin: 1px -16px 7px 0px;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      li {
+        font-size: 18px;
+        padding: 5px;
+        &:not(:last-child) {
+          margin: 0 0 4px 0;
+        }
+        &:last-child {
+          margin-bottom: 8px;
+        }
+      }
+    }
+    @media (max-width: #{$md4}px) {
+      li {
+        padding-top: 15px;
+      }
+    }
+  }
+  &__link {
+    color: $darkGreyColor;
+    transition: color 0.3s ease 0s;
+    line-height: 120%;
+    font-weight: 500;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $orangeColor;
+      }
+    }
+  }
+  @media (max-width: #{$md3}px) {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.subscribe {
+  &__title {
+    margin: 0 0 calc((16px / 24px) * 1em) 0;
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+    .form__error {
+      position: absolute;
+      top: 100%;
+      margin: 3px 0 0 0;
+      left: 12px;
+      color: red;
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    flex: 0 0 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: $orangeColor;
+    color: #fff;
+    transition: background-color 0.3s ease 0s;
+    margin: 0 0 0 4px;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #be825c;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0 12px;
+    background-color: #f4f5f7;
+    color: #828282;
+    font-size: 16px;
+    border: 1px transparent solid;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.popup {
+  z-index: 5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  // background-color: #fba97665;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 15px;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &_open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    background-color: #eea97e9a;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  &__message {
+    margin-bottom: 10px;
+  }
+
+  &__close {
+    @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+      background: rgba(255, 255, 255, 0.745);
+      backdrop-filter: blur(31px);
+    }
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}

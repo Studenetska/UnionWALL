@@ -1,0 +1,36 @@
+@use "variables" as *;
+
+@mixin font($family, $name, $weight, $style) {
+  @font-face {
+    font-family: #{$family};
+    src: url("/assets/fonts/#{$name}.woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  $minWidthValue: $minWidth + px;
+
+  @if $type == 1 {
+    // Только если меньше контейнера
+    #{$property}: $startSize + px;
+
+    @media (max-width: #{$md3}px) {
+      #{$property}: $minSize + px;
+    }
+  } @else if $type == 2 {
+    // Только если больше контейнера
+    #{$property}: $startSize + px;
+
+    @media (min-width: #{$md3}px) {
+      #{$property}: $minSize + px;
+    }
+  } @else {
+    // Всегда
+    #{$property}: calc(
+      #{$minSize + px} + #{$addSize} * ((100vw - #{$minWidthValue}) / (#{$maxWidth} - #{$minWidthValue}))
+    );
+  }
+}
