@@ -90,7 +90,8 @@
     }
     @media (any-hover: hover) {
       &:hover {
-        color: $orangeColor;
+        // color: $orangeColor;
+        color: $greenColor;
       }
     }
   }
@@ -180,7 +181,8 @@
     font-weight: 500;
     @media (any-hover: hover) {
       &:hover {
-        color: $orangeColor;
+        // color: $orangeColor;
+        color: $darkGreenColor;
       }
     }
   }
@@ -215,13 +217,16 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    background-color: $orangeColor;
+    // background-color: $orangeColor;
+    background-color: $greenColor;
     color: #fff;
     transition: background-color 0.3s ease 0s;
     margin: 0 0 0 4px;
     @media (any-hover: hover) {
       &:hover {
-        background-color: #be825c;
+        // background-color: #be825c;
+        // background-color: #43945b;
+        background-color: $darkGreenColor;
       }
     }
   }
@@ -262,7 +267,8 @@
   }
 
   &__content {
-    background-color: #eea97e9a;
+    // background-color: #eea97e9a;
+    background-color: #89ee7e9a;
     padding: 20px;
     border-radius: 5px;
     text-align: center;

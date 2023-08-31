@@ -14,7 +14,8 @@
     @media (min-width: #{$md2}px) {
       &::before {
         content: "";
-        background: #f9f1e7;
+        // background: #f9f1e7;
+        background: #d9f5d6;
         position: absolute;
         top: 0;
         width: 100vw;
@@ -112,14 +113,15 @@
     @include adaptiv-value("min-height", 78, 45, 1);
     @include adaptiv-value("font-size", 20, 16, 1);
 
-    background: $orangeColor;
-    // background: $greenColor;
+    // background: $orangeColor;
+    background: rgb(124, 191, 111);
     color: #fff;
     width: 100%;
 
     @media (any-hover: hover) {
       &:hover {
-        background: #966749;
+        // background: #966749;
+        background: $darkGreenColor;
       }
     }
   }

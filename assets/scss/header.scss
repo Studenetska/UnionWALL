@@ -155,7 +155,8 @@
         }
         .menu__arrow,
         .menu__link {
-          color: $orangeColor;
+          // color: $orangeColor;
+          color: $darkGreenColor;
         }
       }
     }
@@ -172,7 +173,8 @@
         }
         .menu__arrow,
         .menu__link {
-          color: $orangeColor;
+          // color: $orangeColor;
+          color: $darkGreenColor;
         }
       }
     }
@@ -212,7 +214,8 @@
 
   &__sub-list {
     position: relative;
-    background-color: $orangeColor;
+    // background-color: $orangeColor;
+    background-color: $darkGreenColor;
     padding: 15px;
     flex: 1 1 100%;
     // для открытия подменю
@@ -277,7 +280,8 @@
       visibility: visible;
     }
     .search-form__icon {
-      color: $orangeColor;
+      // color: $orangeColor;
+      color: $darkGreenColor;
     }
   }
 
@@ -344,12 +348,14 @@
   @include adaptiv-value("gap", 32, 15, 1);
   &__item {
     &_favorites {
-      color: #262f56;
+      // color: #262f56;
+      color: #1f1e1e;
       font-size: 24px;
       transition: color 0.3s ease 0s;
       @media (any-hover: hover) {
         &:hover {
-          color: $orangeColor;
+          // color: $orangeColor;
+          color: $darkGreenColor;
         }
       }
     }
@@ -366,7 +372,8 @@
   transition: color 0.3s ease 0s;
   @media (any-hover: hover) {
     &:hover {
-      color: $orangeColor;
+      // color: $orangeColor;
+      color: $darkGreenColor;
     }
   }
 }
@@ -475,7 +482,8 @@
     margin: 0 0 calc((5px / 16px) * 1em) 0;
     @media (any-hover: hover) {
       &:hover {
-        color: $orangeColor;
+        // color: $orangeColor;
+        color: $darkGreenColor;
       }
     }
   }
