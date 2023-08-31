@@ -1,0 +1,68 @@
+
+{
+  "products": [
+    {
+      "id": 5,
+      "url": "#",
+      "title": "Curtains and Drapes Collection",
+      "text": "Leaf Pattern Blackout Curtains: Stylish Privacy",
+      "labels": "",
+      "image": "05.png",
+      "price": "288.99",
+      "priceOld": "",
+      "shareUrl": "",
+      "likeUrl": ""
+    },
+    {
+    "id": 6,
+    "url": "#",
+    "title": "Plexy Tray Collection",
+    "text": "Exquisite Animal-Themed Tray Design",
+    "labels": [
+      {
+        "type": "sale",
+        "value": "-50%"
+      }
+    ],
+    "image": "06.jpg",
+    "price": "25.50",
+    "priceOld": "51.00",
+    "shareUrl": "",
+    "likeUrl": ""
+  },
+    {
+    "id": 7,
+    "url": "#",
+    "title": "Placemat Collection",
+    "text": "Nature-Inspired Woolen Placemats",
+    "labels": [
+      {
+        "type": "sale",
+        "value": "-50%"
+      }
+    ],
+    "image": "07.png",
+    "price": "18.00",
+    "priceOld": "36.00",
+    "shareUrl": "",
+    "likeUrl": ""
+  },
+    {
+    "id": 8,
+    "url": "#",
+    "title": "Apron Collection",
+    "text": "Cooking Apron: Animal and Nature Art",
+    "labels":  [
+      {
+        "type": "new",
+        "value": "New"
+      }
+    ],
+    "image": "08.png",
+    "price": "21.95",
+    "priceOld": "",
+    "shareUrl": "",
+    "likeUrl": ""
+  }
+  ]
+}
